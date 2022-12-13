@@ -1,0 +1,29 @@
+<table>
+  <thead>
+  <tr>
+    <th>S.No</th>
+    <th>Avatar</th>
+    <th>Full Name</th>
+    <th>Email</th>
+    <th>D.O.B</th>
+    <th>Age</th>
+    <th>Phone#</th>
+  </tr>
+  </thead>
+  <tbody>
+  <ng-container *ngFor="let user of userList; index as i">
+    <tr style="cursor: pointer" (click)="viewDetail(user)">
+      <td data-column="Full Name">{{i + 1}}</td>
+      <td data-column="Avatar"> <img [src]="user?.picture?.thumbnail"> </td>
+      <td data-column="Full Name">{{user?.name?.title}} {{user?.name?.first}} {{user?.name?.last}}</td>
+      <td data-column="Email">{{user?.email}}</td>
+      <td data-column="D.O.B">{{user?.dob?.date | date: 'MMM d, yyyy'}}</td>
+      <td data-column="Age">{{user?.dob?.age}}</td>
+      <td data-column="Phone#">{{user?.phone}}</td>
+    </tr>
+  </ng-container>
+  </tbody>
+</table>
+<div align="center" style="margin: auto auto; padding-top: 20px">
+  <button (click)="getRecords(6)" class="button gdlr-button">Load More</button>
+</div>

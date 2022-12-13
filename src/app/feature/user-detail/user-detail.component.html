@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div
+      class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
+      <div class="panel panel-primary">
+        <div align="center" class="panel-heading">
+          <h3 class="panel-title">{{user?.name?.first + ' ' + user?.name?.last}}</h3>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div align="center" class="col-md-3 col-lg-3 ">
+              <img alt="User Pic" class="img-circle img-responsive"
+                   [src]="user?.picture?.large">
+            </div>
+            <div class=" col-md-9 col-lg-9 ">
+              <table class="table table-user-information">
+                <tbody>
+                <tr>
+                  <td>Email</td>
+                  <td><a [href]="'mailto:' + user?.email">{{user?.email}}</a></td>
+                </tr>
+                <tr>
+                  <td>Date of Birth</td>
+                  <td>{{user?.dob?.date | date: 'MMM d, yyyy'}}</td>
+                </tr>
+                <tr>
+                <tr>
+                  <td>Age</td>
+                  <td>{{user?.dob?.age}}</td>
+                </tr>
+                <tr>
+                  <td>Phone Number</td>
+                  <td>{{user?.phone}}</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
